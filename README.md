@@ -12,3 +12,8 @@ Features over xmltv2vdr.pl:
 * No external dependencies once static binary built
 * XML parser not based on regular expressions
 * No genre, rating, etc files needed
+
+tv_grab_na_dd --days 1 --output /tmp/epg_schedules_direct.xml \
+&& vdr-epg-tool -c /var/lib/vdr/channels.conf -x
+/tmp/epg_schedules_direct.xml epg-load \
+&& rm /tmp/epg_schedules_direct.xml
